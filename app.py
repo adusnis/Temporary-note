@@ -17,5 +17,3 @@ def save():
         f.write(f'{input}')
     return render_template('index.html', note = input)
 
-
-app.run(debug=True)
