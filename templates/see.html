@@ -23,6 +23,7 @@
         margin-bottom: 10px;
       }
       body{
+        margin: 0%;
         text-align: center;
         background-color: rgb(235, 235, 235);
       }
@@ -36,18 +37,30 @@
 </head>
 <body>
   <header><h4>ห้อง <span name="code">{{code}}</span></h4></header>
-  <button id="copy" onclick="copyToClipboard()">คัดลอก</button>
-  <textarea name="text" readonly>{{text}}</textarea><br>
+  <textarea id="text">{{text}}</textarea><br>
+  <button id="copy" onclick="Copy()">คัดลอก</button>
   <a href="index.html"><input type="submit" value="กลับ"></a>
   <script>
-    function copyToClipboard() {
-      var input = document.body.appendChild(document.getElementsByName("text"));
-      input.value = text;
-      input.focus();
-      input.select();
-      document.execCommand('copy');
-      input.parentNode.removeChild(input);
-    }
+function Copy() {
+  // Get the text field
+  var copyText = document.getElementById("text");
+
+  // Check if the clipboard API is supported
+  if (navigator.clipboard) {
+    // Select the text field
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); // For mobile devices
+
+    // Copy the text inside the text field
+    navigator.clipboard.writeText(copyText.value);
+
+    // Alert the copied text
+    alert("Copied!");
+  } else {
+    // Alert the user that the clipboard is not supported
+    alert("Sorry, your browser does not support the clipboard API");
+  }
+}
     </script>
 </body>
 </html>

@@ -13,51 +13,50 @@
       }
       em{
         display: block;
-        margin-top: 70px;
         color: red;
       }
       body{
         text-align: center;
         margin: 0%;
-        background-color: rgb(235, 235, 235);
+        background-color: rgb(244, 244, 244);
       }
 
       #code{
         width: 50px;
       }
-      header{
-        position: fixed;
+      footer{
+        display: block;
         text-align: center;
         width: 100%;
-        top: 0%;
-        margin-top: 0%;
+        height: 100px;
         background-color: rgb(255, 255, 255);
-        padding: 0px;
-        font-size: 18px;
+        padding: 10px;
+        font-size: 15px;
       }
     </style>
 </head>
 <body>
-  <header><p>ฝากข้อความออนไลน์ สามารถเข้าถึงได้ทุกอุปกรณ์ ฟรี</p></header>
-    <p><em>**ข้อความที่ฝากจะหายไปจากระบบภายในสองนาที**</em></p>
-    <form id="see-form" method="POST" action="/join">
-        <label>กรอกรหัสเพื่อเข้าห้อง: </label><input id="code" name="code"> <input class="button_submit" type="submit" value="ค้น"><br>
-    </form>
-    <p><em>{{respond}}</em></p>
-    <div id="send">
+  <p><em>**ข้อความที่ฝากจะหายไปจากระบบภายในไม่กี่นาที**</em></p>
+  <form id="see-form" method="POST" action="/join">
+    <label>กรอกรหัสเพื่อเข้าห้อง: </label><input id="code" name="code"> <input class="button_submit" type="submit" value="ค้น"><br>
+  </form>
+  <p><em>{{respond}}</em></p>
+  <div id="send">
     <form id="send-form" method="POST" action="/create">
-        <textarea
-          id="field"
-          type="text"
-          name="input-field"
-          placeholder="ใส่ข้อความที่นี่"
-        >{{text}}</textarea><br>
+      <textarea
+      id="field"
+      type="text"
+      name="input-field"
+      placeholder="ใส่ข้อความที่นี่"
+      >{{text}}</textarea><br>
         <input type="submit" value="สร้างห้อง">
     </form>
-    </div>
-    <p id="getcode">{{code}}</p>
-    <script>
-      document.getElementById("field").focus()
+  </div>
+  <p id="getcode">{{code}}</p>
+  <script>
+    document.getElementById("field").focus()
     </script>
+<footer><p>ฝากข้อความออนไลน์ สามารถเข้าถึงได้ทุกอุปกรณ์ ฟรี</p>
+<p>พบปัญหาการใช้งานติดต่อ contact@sinsuda.com</p></footer>
 </body>
 </html>
