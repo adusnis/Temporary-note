@@ -4,22 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บริการฝากข้อความไว้ในเว็บชั่วคราว</title>
     <style>
       textarea{
-        width: 80vw;
-        height: 80vh;
+        margin-top: 10px;
+        width: 90vw;
+        height: 60vh;
+      }
+      em{
+        color: red;
+      }
+      body{
+        text-align: center;
+      }
+      #send{
+        margin-top: 40px;
       }
     </style>
 </head>
-<body><center>
-    <form id="contact-form" method="POST" action="/">
-            <textarea
-              class="inputbox"
-              type="text"
-              name="inputsave"
-              rows="5"
-            >{{note}}</textarea>
-            <p><input class="button_submit" type="submit" value="update"/></p>
+<body>
+    <p><em>ข้อความที่ฝากจะหายไปจากระบบภายในสองนาที</em></p>
+    <form id="see-form" method="POST" action"/see">
+        <label>กรอกรหัสเพื่อดูข้อความ: </label><input name="code" value="Pev"> <input class="button_submit" type="submit" value="ค้น"><br>
     </form>
-</body></center>
+    <p><em>{{respond}}</em></p>
+    <div id="send">
+    <label>กล่องฝากข้อความ</label>
+    <form id="send-form" method="POST" action="/">
+        <textarea
+            type="text"
+            name="input-field"
+            placeholder="ใส่ข้อความที่นี่"
+        >{{text}}</textarea><br>
+        <input class="button_submit" type="submit" value="รับรหัส" onclick="showcode()">
+    </form>
+    </div>
+    <p id="getcode">{{code}}</p>
+</body>
 </html>
