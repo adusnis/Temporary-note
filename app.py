@@ -27,5 +27,3 @@ def save():
     with open(f'{code}.txt', mode='w', encoding='utf-8') as f:
         f.write(f'{input}')
     return render_template('index.html', text = input, code = code)
-
-app.run(debug=True)
