@@ -6,20 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ห้อง {{code}}</title>
     <style>
+        header{
+        position: fixed;
+        text-align: center;
+        width: 100%;
+        top: 0%;
+        margin-top: 0%;
+        background-color: rgb(255, 255, 255);
+        font-size: 18px;
+        padding: 0px;
+      }
       textarea{
-        margin-top: 10px;
+        margin-top: 110px;
         width: 90vw;
-        height: 60vh;
+        height: 50vh;
+        margin-bottom: 10px;
       }
       body{
         text-align: center;
+        background-color: rgb(235, 235, 235);
       }
+      #copy{
+        top: 90px;
+        position: fixed;
+        right: 5vw;
+      }
+      
     </style>
 </head>
 <body>
-  <h3>ห้อง <span name="code">{{code}}</span></h3>
-  <textarea name="input-field">{{text}}</textarea><br>
+  <header><h4>ห้อง <span name="code">{{code}}</span></h4></header>
+  <button id="copy" onclick="copyToClipboard()">คัดลอก</button>
+  <textarea name="text" readonly>{{text}}</textarea><br>
   <a href="index.html"><input type="submit" value="กลับ"></a>
-
+  <script>
+    function copyToClipboard() {
+      var input = document.body.appendChild(document.getElementsByName("text"));
+      input.value = text;
+      input.focus();
+      input.select();
+      document.execCommand('copy');
+      input.parentNode.removeChild(input);
+    }
+    </script>
 </body>
 </html>
