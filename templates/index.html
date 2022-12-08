@@ -24,19 +24,19 @@
 </head>
 <body>
     <p><em>ข้อความที่ฝากจะหายไปจากระบบภายในสองนาที</em></p>
-    <form id="see-form" method="POST" action="/join">
-        <label>กรอกรหัสเพื่อเข้าห้อง: </label><input name="code"> <input class="button_submit" type="submit" value="ค้น"><br>
+    <form id="see-form" method="POST" action"/see">
+        <label>กรอกรหัสเพื่อดูข้อความ: </label><input name="code" value="Pev"> <input class="button_submit" type="submit" value="ค้น"><br>
     </form>
     <p><em>{{respond}}</em></p>
     <div id="send">
     <label>กล่องฝากข้อความ</label>
-    <form id="send-form" method="POST" action="/create">
+    <form id="send-form" method="POST" action="/">
         <textarea
             type="text"
             name="input-field"
             placeholder="ใส่ข้อความที่นี่"
         >{{text}}</textarea><br>
-        <input type="submit" value="สร้างห้อง">
+        <input class="button_submit" type="submit" value="รับรหัส" onclick="showcode()">
     </form>
     </div>
     <p id="getcode">{{code}}</p>
