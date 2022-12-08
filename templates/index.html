@@ -18,27 +18,33 @@
         text-align: center;
       }
       #send{
-        margin-top: 40px;
+        margin-top: 20px;
+      }
+      #code{
+        width: 50px;
       }
     </style>
 </head>
 <body>
     <p><em>ข้อความที่ฝากจะหายไปจากระบบภายในสองนาที</em></p>
     <form id="see-form" method="POST" action="/join">
-        <label>กรอกรหัสเพื่อเข้าห้อง: </label><input name="code"> <input class="button_submit" type="submit" value="ค้น"><br>
+        <label>กรอกรหัสเพื่อเข้าห้อง: </label><input id="code" name="code"> <input class="button_submit" type="submit" value="ค้น"><br>
     </form>
     <p><em>{{respond}}</em></p>
     <div id="send">
-    <label>กล่องฝากข้อความ</label>
     <form id="send-form" method="POST" action="/create">
         <textarea
-            type="text"
-            name="input-field"
-            placeholder="ใส่ข้อความที่นี่"
+          id="field"
+          type="text"
+          name="input-field"
+          placeholder="ใส่ข้อความที่นี่"
         >{{text}}</textarea><br>
         <input type="submit" value="สร้างห้อง">
     </form>
     </div>
     <p id="getcode">{{code}}</p>
+    <script>
+      document.getElementById("field").focus()
+    </script>
 </body>
 </html>

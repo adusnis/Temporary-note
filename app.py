@@ -30,7 +30,7 @@ def save():
         f.write(f'{text}')
     return render_template('see.html', code=code, text=text)
 
-
+'''
 @app.route("/update", methods=['POST'])
 def update():
     textinput = dict(request.form.items())
@@ -39,4 +39,5 @@ def update():
     with open(f'{code}.txt', mode='w', encoding='utf-8') as f:
         f.write(f'{text}')
     return render_template('see.html', code=code, text=text)
+'''
 #app.run(debug=True)

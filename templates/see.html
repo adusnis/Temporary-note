@@ -8,8 +8,8 @@
     <style>
       textarea{
         margin-top: 10px;
-        width: 80vw;
-        height: 80vh;
+        width: 90vw;
+        height: 60vh;
       }
       body{
         text-align: center;
@@ -17,10 +17,9 @@
     </style>
 </head>
 <body>
-  <form id="update-form" method="POST" action="/update">
-    <h3>ห้อง <span name="code">{{code}}</span></h3>
-    <textarea name="input-field">{{text}}</textarea><br>
-    <input type="submit" value="update">
-  </form>
+  <h3>ห้อง <span name="code">{{code}}</span></h3>
+  <textarea name="input-field">{{text}}</textarea><br>
+  <a href="index.html"><input type="submit" value="กลับ"></a>
+
 </body>
 </html>
