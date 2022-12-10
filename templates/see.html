@@ -40,6 +40,9 @@
         color: red;
         font-size: small;
       }
+      #respond{
+        text-align: right;
+      }
     </style>
 </head>
 <body>
@@ -60,23 +63,17 @@
           <button id="upload" type="submit">อัพโหลด⬆️</button>
         </form>
       </div>
-      <p><em>{{respond}}</em></p>
+      <p><em id="respond">{{respond}}</em></p>
       
       <textarea id="text" value="{{text}}">{{text}}</textarea><br>
     </div>
   </main>
   <a href="https://note.sinsuda.com"><input type="button" value="หน้าหลัก"></a>
   <script>
-    // Get a reference to the textarea and input-field elements.
     var textarea = document.getElementById('text');
     var inputField = document.getElementById('input-field');
-
-    // Add an event listener to the textarea element that will update
-    // the value of the input-field element whenever the value of the
-    // textarea element changes.
     inputField.value = textarea.value;
     textarea.addEventListener('change', function() {
-    
     inputField.value = textarea.value;
   });
   function goToLink(){
