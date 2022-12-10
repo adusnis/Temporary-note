@@ -6,61 +6,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ห้อง {{code}}</title>
     <style>
-        header{
-        position: fixed;
+      body{
+        background-color: rgb(235, 235, 235);
         text-align: center;
-        width: 100%;
-        top: 0%;
-        margin-top: 0%;
+        margin: 0%;
+      }
+      header{
         background-color: rgb(255, 255, 255);
         font-size: 18px;
-        padding: 0px;
+        padding: 10px;
+      }
+      .main{
+        width: 95vw;
+        position: relative;
       }
       textarea{
-        margin-top: 110px;
-        width: 90vw;
-        height: 50vh;
+        width: 100%;
+        height: 70vh;
         margin-bottom: 10px;
+        position: relative;
+        left: 2vw;
       }
-      body{
-        margin: 0%;
-        text-align: center;
-        background-color: rgb(235, 235, 235);
+      .tools{
+        text-align: right;
+        margin-top: 10px;
+        display: block;
       }
-      #copy{
-        top: 90px;
-        position: fixed;
-        right: 5vw;
+      form{
+        display: inline;
       }
-      
     </style>
 </head>
 <body>
-  <header><h4>ห้อง <span name="code">{{code}}</span></h4></header>
-  <textarea id="text">{{text}}</textarea><br>
-  <button id="copy" onclick="Copy()">คัดลอก</button>
-  <a href="https://note.sinsuda.com"><input type="button" value="กลับ"></a>
+  <header><strong>ห้อง <span name="code" id="code">{{code}}</span></strong></header>
+  <main>
+    <div class="main">
+      <div class="tools">
+        <button id="copy" onclick="copy()">คัดลอก📋</button>
+        <button id="clear" onclick="Clear()">ล้าง❌</button>
+        <form action="/{{ code }}/update" method="POST">
+          <input type="hidden" id="input-field1" name="input-field">
+          <button id="update" type="submit">อัพเดต⬇️</button>
+        </form>
+        <form action="/{{ code }}/upload" method="POST">
+          <input type="hidden" id="input-field2" name="input-field">
+          <button id="refresh" type="submit">อัพโหลด⬆️</button>
+        </form>
+      </div>
+      <p><em>{{respond}}</em></p>
+      
+      <textarea id="text" value="{{text}}">{{text}}</textarea><br>
+    </div>
+  </main>
+  <a href="https://note.sinsuda.com"><input type="button" value="หน้าหลัก"></a>
   <script>
-function Copy() {
-  // Get the text field
-  var copyText = document.getElementById("text");
+    // Get a reference to the textarea and input-field elements.
+    var textarea = document.getElementById('text');
+    var inputField1 = document.getElementById('input-field1');
+    var inputField2 = document.getElementById('input-field2');
+    // Add an event listener to the textarea element that will update
+    // the value of the input-field element whenever the value of the
+    // textarea element changes.
+    textarea.addEventListener('change', function() {
+    inputField1.value = textarea.value;
+    inputField2.value = textarea.value;
+  });
 
-  // Check if the clipboard API is supported
-  if (navigator.clipboard) {
-    // Select the text field
-    copyText.select();
-    copyText.setSelectionRange(0, 99999); // For mobile devices
+  function copy() {
+    // Get the text field
+    var copyText = document.getElementById("text");
 
-    // Copy the text inside the text field
-    navigator.clipboard.writeText(copyText.value);
+    // Check if the clipboard API is supported
+    if (navigator.clipboard) {
+      // Select the text field
+      copyText.select();
+      copyText.setSelectionRange(0, 99999); // For mobile devices
 
-    // Alert the copied text
-    alert("Copied!");
+      // Copy the text inside the text field
+      navigator.clipboard.writeText(copyText.value);
+
+      // Alert the copied text
+      alert("Copied!");
   } else {
-    // Alert the user that the clipboard is not supported
-    alert("Sorry, your browser does not support the clipboard API");
+      // Alert the user that the clipboard is not supported
+      alert("Sorry, your browser does not support the clipboard API");
   }
+
 }
+  function Clear(){
+    document.getElementById("text").value = "";
+  }
+
     </script>
 </body>
 </html>

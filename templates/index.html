@@ -33,6 +33,9 @@
         padding: 10px;
         font-size: 15px;
       }
+      .hidden{
+        display: none;
+      }
     </style>
 </head>
 <body>
@@ -48,7 +51,8 @@
       type="text"
       name="input-field"
       placeholder="ใส่ข้อความที่นี่"
-      >{{text}}</textarea><br>
+      value="{{text}}"
+      ></textarea><br>
         <input type="submit" value="สร้างห้อง">
     </form>
   </div>

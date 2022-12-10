@@ -3,11 +3,20 @@ import random
 import string
 app = Flask(__name__)
 
+def createcode():
+    code = ''.join(random.choices(string.ascii_letters, k=3))
+    try:
+        with open(f'{code}.txt', mode='r', encoding='utf-8') as f:
+            f.read()
+    except IOError:
+        return code
+    else:
+        return createcode()
+
 
 @app.route('/')
 def index():
     return render_template('index.html')
-
 
 @app.route('/join', methods=['POST'])
 def see():
@@ -17,27 +26,35 @@ def see():
         with open(f'{code}.txt', mode='r', encoding='utf-8') as f:
             text = f.read()
     except:
-        return render_template('index.html', respond = "มีบางอย่างผิดพลาด")
+        return render_template('index.html', respond = "มีบางอย่างผิดพลาด ไม่พบข้อมูล")
     return render_template('see.html', code =  code, text = text)
 
 
 @app.route("/create", methods=['POST'])
-def save():
-    textinput = dict(request.form.items())
-    text = textinput['input-field']
-    code = ''.join(random.choices(string.ascii_letters, k=3))
+def create():
+    code = createcode()
+    text = request.form.get('input-field')
     with open(f'{code}.txt', mode='w', encoding='utf-8') as f:
-        f.write(f'{text}')
+        f.write(text)
     return render_template('see.html', code=code, text=text)
 
-'''
-@app.route("/update", methods=['POST'])
-def update():
-    textinput = dict(request.form.items())
-    text = textinput['input-field']
-    code = textinput['code']
+
+@app.route("/<code>/upload", methods=['POST'])
+def upload(code):
+    text = request.form.get('input-field')
     with open(f'{code}.txt', mode='w', encoding='utf-8') as f:
-        f.write(f'{text}')
+        f.write(text)
     return render_template('see.html', code=code, text=text)
-'''
-#app.run(debug=True)
+
+
+@app.route('/<code>/update', methods=['POST'])
+def update(code):
+    text = request.form.get('input-field')
+    try:
+        with open(f'{code}.txt', mode='r', encoding='utf-8') as f:
+            text = f.read()
+    except:
+        return render_template('see.html', respond="มีบางอย่างผิดพลาด ไม่พบข้อมูล", text=text)
+    return render_template('see.html', code=code, text=text)
+
+app.run(debug=True)
