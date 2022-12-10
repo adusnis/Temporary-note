@@ -52,13 +52,13 @@
         <button id="copy" onclick="copy()">คัดลอก📋</button>
         <button id="clear" onclick="Clear()">ล้าง❌</button>
         <form action="/{{ code }}/update" method="POST">
-          <input type="hidden" id="input-field1" name="input-field">
           <button id="update" type="submit">อัพเดต⬇️</button>
         </form>
         <form action="/{{ code }}/upload" method="POST">
-          <input type="hidden" id="input-field2" name="input-field">
-          <button id="refresh" type="submit">อัพโหลด⬆️</button>
+          <input type="hidden" id="input-field" name="input-field">
+          <button id="upload" type="submit">อัพโหลด⬆️</button>
         </form>
+        <button onclick="val()">dd</button>
       </div>
       <p><em>{{respond}}</em></p>
       
@@ -69,14 +69,13 @@
   <script>
     // Get a reference to the textarea and input-field elements.
     var textarea = document.getElementById('text');
-    var inputField1 = document.getElementById('input-field1');
-    var inputField2 = document.getElementById('input-field2');
+    var inputField = document.getElementById('input-field');
     // Add an event listener to the textarea element that will update
     // the value of the input-field element whenever the value of the
     // textarea element changes.
+    inputField.value = textarea.value;
     textarea.addEventListener('change', function() {
-    inputField1.value = textarea.value;
-    inputField2.value = textarea.value;
+    inputField.value = textarea.value;
   });
 
   function copy() {
@@ -103,7 +102,10 @@
   function Clear(){
     document.getElementById("text").value = "";
   }
-
+  function val(){
+    var inputField = document.getElementById('input-field');
+    console.log(inputField.value)
+  }
     </script>
 </body>
 </html>

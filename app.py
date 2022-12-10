@@ -42,19 +42,21 @@ def create():
 @app.route("/<code>/upload", methods=['POST'])
 def upload(code):
     text = request.form.get('input-field')
+    print('1'+text)
     with open(f'{code}.txt', mode='w', encoding='utf-8') as f:
         f.write(text)
+    print('2'+text)
     return render_template('see.html', code=code, text=text)
 
 
 @app.route('/<code>/update', methods=['POST'])
 def update(code):
-    text = request.form.get('input-field')
     try:
         with open(f'{code}.txt', mode='r', encoding='utf-8') as f:
             text = f.read()
     except:
         return render_template('see.html', respond="มีบางอย่างผิดพลาด ไม่พบข้อมูล", text=text)
+    print(text)
     return render_template('see.html', code=code, text=text)
 
-#app.run(debug=True)
+app.run(debug=True)
