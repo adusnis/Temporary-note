@@ -52,7 +52,6 @@
   <main>
     <div class="main">
       <div class="tools">
-        <button onclick="goToLink()">เปิดลิงก์↖️</button>
         <button id="copy" onclick="copy()">คัดลอก📋</button>
         <button id="clear" onclick="Clear()">ล้าง❌</button>
         <form action="/{{ code }}/update" method="POST">
@@ -76,9 +75,6 @@
     textarea.addEventListener('change', function() {
     inputField.value = textarea.value;
   });
-  function goToLink(){
-    window.location = textarea.value;
-  }
   function copy() {
     // Get the text field
     var copyText = document.getElementById("text");
