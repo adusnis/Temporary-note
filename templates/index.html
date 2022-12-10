@@ -17,8 +17,8 @@
         font-size: small;
       }
       body{
-                color: rgb(106, 106, 106);
-
+        color: rgb(106, 106, 106);
+        max-width: width;
         text-align: center;
         margin: 0%;
         background-color: rgb(244, 244, 244);
@@ -44,7 +44,7 @@
         font-size: small;
         position: fixed;
         top: 0px;
-        left: 0px;
+        left: 8px;
         text-align: left;
         border-radius: 1px;
         padding: 5px;
@@ -54,27 +54,39 @@
         color: rgb(106, 106, 106);
         position: fixed;
         top: 0px;
-        right: 0px;
+        right: 8px;
         text-decoration: none;
         background-color: rgb(255, 255, 255);
         padding: 5px;
         font-size: small;
       }
+      header{
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+        padding: 5px;
+        font-size: small;
+        height: 20px;
+        display: block;
+      }
     </style>
 </head>
 <body>
-  <p><em>ข้อความที่ฝากจะหายไปจากระบบภายในไม่กี่นาที</em></p>
-  <p><em>**อย่าส่งข้อมูลที่เป็นความลับ**</em></p>
-  <details>
-    <summary>วิธีการใช้งาน</summary>
-    <p>1. ใส่ข้อความที่ต้องการฝากลงในช่องข้อความ</p>
-    <p>2. กดปุ่มอัพโหลดและสร้างห้อง</p>
-    <p>3. ระบบจะสร้างห้องให้และแสดงรหัสห้อง</p>
-    <p>4. ให้ผู้ส่งรหัสห้องให้กับผู้รับ</p>
-    <p>5. ผู้รับกดปุ่มค้นหาห้องแล้วใส่รหัสห้องที่ได้รับ</p>
-    <p>6. ระบบจะแสดงข้อความที่ผู้ส่งฝากไว้</p>
-  </details>
-  <form id="see-form" method="POST" action="/join">
+  <header>
+    <details>
+      <summary>วิธีการใช้งาน</summary>
+      <p>1. ใส่ข้อความที่ต้องการฝากลงในช่องข้อความ</p>
+      <p>2. กดปุ่มอัพโหลดและสร้างห้อง</p>
+      <p>3. ระบบจะสร้างห้องให้และแสดงรหัสห้อง</p>
+      <p>4. ให้ผู้ส่งรหัสห้องให้กับผู้รับ</p>
+      <p>5. ผู้รับกดปุ่มค้นหาห้องแล้วใส่รหัสห้องที่ได้รับ</p>
+      <p>6. ระบบจะแสดงข้อความที่ผู้ส่งฝากไว้</p>
+    </details>
+    <a id="sinsuda" href="https://sinsuda.com">โปรแกรมอื่น ๆ</a>
+  </header>
+  <main>
+    <form id="see-form" method="POST" action="/join">
+      <p><em>ข้อความที่ฝากจะหายไปจากระบบภายในไม่กี่นาที</em></p>
+      <p><em>**อย่าส่งข้อมูลที่เป็นความลับ**</em></p>
     <label>กรอกรหัสเพื่อเข้าห้อง: </label><input id="code" name="code"> <input class="button_submit" type="submit" value="ค้น"><br>
   </form>
   <p><em>{{respond}}</em></p>
@@ -93,7 +105,7 @@
   <script>
     document.getElementById("field").focus()
     </script>
-    <a id="sinsuda" href="https://sinsuda.com">โปรแกรมอื่น ๆ</a>
+    
 <footer><p>เว็บฝากข้อความออนไลน์ ฝากลิงก์ข้ามอุปกรณ์ ที่ง่ายและสะดวกที่สุด สามารถเข้าถึงได้ทุกอุปกรณ์ ฟรี ๆ</p>
 <p>พบปัญหาการใช้งานติดต่อ contact@sinsuda.com</p></footer>
 </body>
