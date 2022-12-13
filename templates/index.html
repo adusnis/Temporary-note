@@ -94,22 +94,27 @@
   </form>
   <p><em>{{respond}}</em></p>
   <div id="send">
+    <textarea
+    id="text"
+    type="text"
+    placeholder="ใส่ข้อความที่นี่"
+    ></textarea><br>
     <form id="send-form" method="POST" action="/create">
-      <textarea
-      id="field"
-      type="text"
-      name="input-field"
-      placeholder="ใส่ข้อความที่นี่"
-      value="{{text}}"
-      ></textarea><br>
-        <input type="submit" value="อัพโหลดและสร้างห้อง">
+      <input type="hidden" id="input-field" name="input-field">
+      <input type="submit" value="อัพโหลดและสร้างห้อง">
     </form>
   </div>
     
 <footer><p>เว็บฝากข้อความออนไลน์, ฝากลิงก์ข้ามอุปกรณ์ ที่ง่ายที่สุด <br>สามารถเข้าถึงได้ทุกอุปกรณ์ ฟรี ๆ</p>
 <p>พบปัญหาการใช้งานติดต่อ contact@sinsuda.com</p></footer>
   <script>
-    document.getElementById("field").focus()
+    document.getElementById("text").focus()
+    var textarea = document.getElementById('text');
+    var inputField = document.getElementById('input-field');
+    inputField.value = textarea.value;
+    textarea.addEventListener('change', function() {
+    inputField.value = textarea.value;
+  });
   </script>
 </body>
 </html>
