@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="ฝากข้อความ ฝากลิงก์ ออนไลน์">
     <title>ฝากข้อความ ฝากลิงก์</title>
     <style>
       textarea{
@@ -13,11 +16,11 @@
       }
       em{
         display: block;
-        color: red;
+        color: rgba(221, 0, 0, 0.836);
         font-size: small;
       }
       body{
-        color: rgb(106, 106, 106);
+        color: rgb(0, 0, 0);
         max-width: width;
         text-align: center;
         margin: 0%;
@@ -77,9 +80,9 @@
       <p>1. ใส่ข้อความที่ต้องการฝากลงในช่องข้อความ</p>
       <p>2. กดปุ่มอัพโหลดและสร้างห้อง</p>
       <p>3. ระบบจะสร้างห้องให้และแสดงรหัสห้อง</p>
-      <p>4. ให้ผู้ส่งรหัสห้องให้กับผู้รับ</p>
-      <p>5. ผู้รับกดปุ่มค้นหาห้องแล้วใส่รหัสห้องที่ได้รับ</p>
-      <p>6. ระบบจะแสดงข้อความที่ผู้ส่งฝากไว้</p>
+      <p>4. ให้ผู้ส่งส่งรหัสห้องให้กับผู้รับ</p>
+      <p>5. ผู้รับใส่รหัสห้องที่ได้รับแล้วกดปุ่มค้น</p>
+      <p>6. ระบบจะแสดงข้อความที่ผู้ส่งฝากไว้<br>สามารถแก้ไขและอัปเดตได้</p>
     </details>
     <a id="sinsuda" href="https://sinsuda.com">โปรแกรมอื่น ๆ</a>
   </header>
@@ -87,7 +90,7 @@
     <form id="see-form" method="POST" action="/join">
       <p><em>ข้อความที่ฝากจะหายไปจากระบบภายในไม่กี่นาที</em></p>
       <p><em>**อย่าส่งข้อมูลที่เป็นความลับ**</em></p>
-    <label>กรอกรหัสเพื่อเข้าห้อง: </label><input id="code" name="code"> <input class="button_submit" type="submit" value="ค้น"><br>
+    <label>กรอกรหัสเพื่อเข้าห้อง: </label><input id="code" name="code" aria-label="Search"> <input class="button_submit" type="submit" value="ค้น"><br>
   </form>
   <p><em>{{respond}}</em></p>
   <div id="send">
@@ -102,11 +105,11 @@
         <input type="submit" value="อัพโหลดและสร้างห้อง">
     </form>
   </div>
-  <script>
-    document.getElementById("field").focus()
-    </script>
     
 <footer><p>เว็บฝากข้อความออนไลน์, ฝากลิงก์ข้ามอุปกรณ์ ที่ง่ายที่สุด <br>สามารถเข้าถึงได้ทุกอุปกรณ์ ฟรี ๆ</p>
 <p>พบปัญหาการใช้งานติดต่อ contact@sinsuda.com</p></footer>
+  <script>
+    document.getElementById("field").focus()
+  </script>
 </body>
 </html>
