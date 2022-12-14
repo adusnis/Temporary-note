@@ -36,7 +36,6 @@ def create():
     text = request.form.get('input-field')
     with open(f'{code}.txt', mode='w', encoding='utf-8') as f:
         f.write(text)
-    print(text)
     return render_template('see.html', code=code, text=text)
 
 
@@ -45,7 +44,7 @@ def upload(code):
     text = request.form.get('input-field')
     with open(f'{code}.txt', mode='w', encoding='utf-8') as f:
         f.write(text)
-    print(text)
+    print("มีคนมาใช้งานด้วยแหละแกร")
     return render_template('see.html', code=code, text=text)
     
 
