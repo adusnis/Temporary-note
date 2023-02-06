@@ -1,88 +1,96 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta
-      name="description"
-      content="เว็บฝากข้อความ ฝากลิงก์ ออนไลน์">
-    <title>ฝากข้อความ ฝากลิงก์</title>
-    <style>
-      textarea{
-        width: 90vw;
-        height: 50vh;
-        margin-bottom: 5px;
-      }
-      em{
-        display: block;
-        color: rgba(221, 0, 0, 0.836);
-        font-size: small;
-      }
-      body{
-        color: rgb(0, 0, 0);
-        max-width: width;
-        text-align: center;
-        margin: 0%;
-        background-color: rgb(244, 244, 244);
-      }
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NYFW5V9SEJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-      #code{
-        width: 50px;
-      }
-      footer{
-        margin-top: 20px;
-        display: block;
-        text-align: center;
-        width: width;
-        height: 100px;
-        background-color: rgb(255, 255, 255);
-        padding: 10px;
-        font-size: 15px;
-      }
-      .hidden{
-        display: none;
-      }
-      details{
-        font-size: small;
-        position: fixed;
-        top: 0px;
-        left: 8px;
-        text-align: left;
-        border-radius: 1px;
-        padding: 5px;
-        background-color: rgb(255, 255, 255);
-      } 
-      #sinsuda{
-        color: rgb(106, 106, 106);
-        position: fixed;
-        top: 0px;
-        right: 8px;
-        text-decoration: none;
-        background-color: rgb(255, 255, 255);
-        padding: 5px;
-        font-size: small;
-      }
-      header{
-        width: width;
-        background-color: rgb(255, 255, 255);
-        padding: 5px;
-        font-size: small;
-        height: 20px;
-        display: block;
-      }
+      gtag('config', 'G-NYFW5V9SEJ');
+      </script>
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta
+name="description"
+content="เว็บฝากข้อความ ฝากลิงก์ ออนไลน์">
+<title>ฝากข้อความ ฝากลิงก์</title>
+<style>
+  header{
+    width: width;
+    background-color: rgb(136, 100, 255);
+    font-size: small;
+    height: 30px;
+    position: sticky;
+    top: 0%;
+    color: white;
+  }
+  header details{
+    position: fixed;
+    top: 5px;
+    left: 8px;
+    text-align: left;
+    border-radius: 1px;
+    background-color: rgb(136, 100, 255);
+  } 
+  header #sinsuda{
+    color: white;
+    position: fixed;
+    top: 5px;
+    right: 8px;
+    text-decoration: none;
+  }
+  em{
+    display: block;
+    color: rgba(221, 0, 0, 0.836);
+    font-size: small;
+  }
+  body{
+      max-width: width;
+      text-align: center;
+      margin: 0%;
+    }
+    
+    #code{
+      width: 50px;
+    }
+    textarea{
+      width: 70vw;
+      height: 40vh;
+      margin-bottom: 5px;
+    }
+    footer{
+      align-items: center;
+      position: relative;
+      bottom: 0px;
+      margin-top: 20px;
+      display: block;
+      text-align: center;
+      width: 100vw;
+      background-color: rgb(255, 255, 255);
+      padding: 10px;
+      font-size: 15px;
+    }
+    .hidden{
+      display: none;
+    }
     </style>
 </head>
 <body>
   <header>
     <details>
       <summary>วิธีการใช้งาน</summary>
-      <p>1. ใส่ข้อความที่ต้องการฝากลงในช่องข้อความ</p>
-      <p>2. กดปุ่มอัพโหลดและสร้างห้อง</p>
-      <p>3. ระบบจะสร้างห้องให้และแสดงรหัสห้อง</p>
-      <p>4. ให้ผู้ส่งส่งรหัสห้องให้กับผู้รับ</p>
-      <p>5. ผู้รับใส่รหัสห้องที่ได้รับแล้วกดปุ่มค้น</p>
-      <p>6. ระบบจะแสดงข้อความที่ผู้ส่งฝากไว้<br>สามารถแก้ไขและอัปเดตได้</p>
+      <ol>
+        <li>ใส่ข้อความที่ต้องการฝากลงในช่องข้อความ</li>
+        <li>กดปุ่มอัพโหลดและสร้างห้อง</li>
+        <li>ระบบจะสร้างห้องให้และแสดงรหัสห้อง</li>
+        <li>ให้ผู้ส่งบอกรหัสห้องให้กับผู้รับ</li>
+        <li>ผู้รับใส่รหัสห้องที่ได้รับแล้วกดปุ่มค้น</li>
+        <li>ระบบจะแสดงข้อความที่ผู้ส่งฝากไว้</li>
+      </ol>
     </details>
     <a id="sinsuda" href="https://sinsuda.com">โปรแกรมอื่น ๆ</a>
   </header>
@@ -106,7 +114,7 @@
   </div>
     
 <footer><p>เว็บฝากข้อความออนไลน์, ฝากลิงก์ข้ามอุปกรณ์ ที่ง่ายที่สุด <br>สามารถเข้าถึงได้ทุกอุปกรณ์ ฟรี ๆ</p>
-<!--<p>พบปัญหาการใช้งานติดต่อ contact@sinsuda.com</p></footer>-->
+  <p>© 2022 Sinsuda</p>
   <script>
     document.getElementById("text").focus()
     var textarea = document.getElementById('text');
