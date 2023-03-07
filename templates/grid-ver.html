@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>anonymous chat</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .grid-container{
+            height: 100vh  ;
+            display: grid;
+            background-color: #2196F3;
+            grid-template-columns: 1fr 3fr 3fr 1fr;
+            grid-template-rows: 1fr 12fr 1fr 1fr 2fr;
+        }
+        .grid-item{
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            font-size: 20px;
+            text-align: center;
+        }
+        .header{
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+        .ads{
+            grid-column: 2 / 4;
+            grid-row: 1 / 2;
+        }
+        .menu{
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+        
+        }
+        .joinbycode{
+            grid-column: 1 / 2;
+            grid-row: 3 / 4;
+        }
+        .create{
+            grid-column: 1 / 2;
+            grid-row: 4 / 5;
+        }
+        .main{
+            grid-column: 2 / 4;
+            grid-row: 2 / 5;
+        }
+        .right{
+            grid-column: 4 / 4;
+            grid-row: 1 / 5;
+        }
+        .footer{
+            grid-column: 1 / 5;
+            grid-row: 5 / 6;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item header">ANOYMOUS CHAT</div>
+        <div class="grid-item ads">AD</div>
+        <div class="grid-item menu">ห้องแยก</div>
+        <div class="grid-item main">แชตโลก</div>
+        <div class="grid-item right">โฆษณา</div>
+        <div class="grid-item create">สร้างห้อง</div>
+        <div class="grid-item footer">พิมพ์</div>
+        <div class="grid-item joinbycode">กรอกเลขห้อง</div>
+    </div>
+</body>
+</html>

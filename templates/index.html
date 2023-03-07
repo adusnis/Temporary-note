@@ -77,21 +77,31 @@ content="เว็บฝากข้อความ ฝากลิงก์ อ
     .hidden{
       display: none;
     }
+    #guidline{
+      display: none;
+      position: absolute;
+      width: 50vw;
+      height: auto;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      
+    }
+    #guidlinebut{
+      position: absolute;
+      top: 5px;
+      left: 8px;
+      background-color: rgb(136, 100, 255);
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
     </style>
 </head>
 <body>
   <header>
-    <details>
-      <summary>วิธีการใช้งาน</summary>
-      <ol>
-        <li>ใส่ข้อความที่ต้องการฝากลงในช่องข้อความ</li>
-        <li>กดปุ่มอัพโหลดและสร้างห้อง</li>
-        <li>ระบบจะสร้างห้องให้และแสดงรหัสห้อง</li>
-        <li>ให้ผู้ส่งบอกรหัสห้องให้กับผู้รับ</li>
-        <li>ผู้รับใส่รหัสห้องที่ได้รับแล้วกดปุ่มค้น</li>
-        <li>ระบบจะแสดงข้อความที่ผู้ส่งฝากไว้</li>
-      </ol>
-    </details>
+      <button id="guidlinebut">วิธีการใช้งาน</button>
+      
     <a id="sinsuda" href="https://sinsuda.com">โปรแกรมอื่น ๆ</a>
   </header>
   <main>
@@ -114,7 +124,7 @@ content="เว็บฝากข้อความ ฝากลิงก์ อ
   </div>
     
 <footer><p>เว็บฝากข้อความออนไลน์, ฝากลิงก์ข้ามอุปกรณ์ ที่ง่ายที่สุด <br>สามารถเข้าถึงได้ทุกอุปกรณ์ ฟรี ๆ</p>
-  <p>© 2022 Sinsuda</p>
+  <p>© 2022 Sinsuda R.</p>
   <script>
     document.getElementById("text").focus()
     var textarea = document.getElementById('text');
@@ -123,6 +133,9 @@ content="เว็บฝากข้อความ ฝากลิงก์ อ
     textarea.addEventListener('change', function() {
     inputField.value = textarea.value;
   });
-  </script>
+		document.getElementById("guidlinebut").addEventListener("click", function() {
+		alert("1. ใส่ข้อความที่ต้องการฝากลงในช่องข้อความ\n2. กดปุ่มอัพโหลดและสร้างห้อง\n3. ระบบจะสร้างห้องให้และแสดงรหัสห้อง\n4. ให้ผู้ส่งบอกรหัสห้องให้กับผู้รับ\n5. ผู้รับใส่รหัสห้องที่ได้รับแล้วกดปุ่มค้น\n6. ระบบจะแสดงข้อความที่ผู้ส่งฝากไว้");
+    })
+    </script>
 </body>
 </html>
