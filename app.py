@@ -3,10 +3,11 @@ from flask import Flask, render_template, request
 import random
 import string
 app = Flask(__name__)
+
 # define the path of folder storing text files
 # in this case, the path is root directory.
-
 DATA_PATH = "/"
+
 
 def createcode():
     code = ''.join(random.choices(string.ascii_letters, k=3))
@@ -60,4 +61,4 @@ def update(code):
         return render_template('see.html', respond="มีบางอย่างผิดพลาด ไม่พบข้อมูล", text=text)
     return render_template('see.html', code=code, text=text)
 
-#app.run(debug=True)
+app.run(debug=True)
