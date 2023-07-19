@@ -78,23 +78,9 @@
     inputField.value = textarea.value;
   });
   function copy() {
-    // Get the text field
-    var copyText = document.getElementById("text");
-
-    // Check if the clipboard API is supported
-    if (navigator.clipboard) {
-      // Select the text field
-      copyText.select();
-      copyText.setSelectionRange(9999); // For mobile devices
-
-      // Copy the text inside the text field
-      navigator.clipboard.writeText(copyText.value);
-      alert("Copied!");
-  } else {
-      // Alert the user that the clipboard is not supported
-      alert("Sorry, your browser does not support the clipboard API");
-  }
-
+  const outputTextbox = document.getElementById("text");
+  outputTextbox.select(); // Select the text
+  navigator.clipboard.writeText(outputTextbox.value); // Copy the selected text to the clipboard
 }
   function Clear(){
     inputField.value = document.getElementById("text").value = "";
