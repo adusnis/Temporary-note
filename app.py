@@ -61,4 +61,5 @@ def update(code):
         return render_template('see.html', respond="มีบางอย่างผิดพลาด ไม่พบข้อมูล", text=text)
     return render_template('see.html', code=code, text=text)
 
-app.run()#debug=True
+if __name__ == "__main__":
+    app.run(debug=True)#debug=True
